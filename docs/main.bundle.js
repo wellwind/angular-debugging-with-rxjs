@@ -66,7 +66,7 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(httpClient) {
         var _this = this;
         this.httpClient = httpClient;
-        this.post$ = __WEBPACK_IMPORTED_MODULE_6_rxjs_Observable__["Observable"].timer(0, 5000).pipe(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_spy_operators_tag__["tag"])('app-timer'), Object(__WEBPACK_IMPORTED_MODULE_7_rxjs_operators__["a" /* switchMap */])(function (duration) {
+        this.post$ = __WEBPACK_IMPORTED_MODULE_6_rxjs_Observable__["Observable"].timer(0, 5000).pipe(Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_spy_operators_tag__["tag"])('app-timer'), Object(__WEBPACK_IMPORTED_MODULE_7_rxjs_operators__["switchMap"])(function (duration) {
             return _this.httpClient.get("https://jsonplaceholder.typicode.com/posts/" + (duration % 10 + 1));
         }), Object(__WEBPACK_IMPORTED_MODULE_5_rxjs_spy_operators_tag__["tag"])('app-post'));
     }
@@ -132,10 +132,12 @@ var AppModule = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Rx__ = __webpack_require__("./node_modules/rxjs/_esm5/Rx.js");
 // The file contents for the current environment will overwrite these during build.
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
+
 var environment = {
     production: false
 };
